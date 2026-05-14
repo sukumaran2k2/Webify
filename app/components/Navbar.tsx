@@ -1,0 +1,104 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import styles from './Navbar.module.css';
+
+const NAV_LINKS = [
+  { href: '#about',        label: 'About' },
+  { href: '#services',     label: 'Services' },
+  { href: '#skills',       label: 'Skills' },
+  { href: '#projects',     label: 'Projects' },
+  { href: '#testimonials', label: 'Testimonials' },
+  { href: '#contact',      label: 'Contact' },
+];
+
+export default function Navbar() {
+  const [scrolled,   setScrolled]   = useState(false);
+  const [menuOpen,   setMenuOpen]   = useState(false);
+  const [activeLink, setActiveLink] = useState('');
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // close menu on resize
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth > 768) setMenuOpen(false); };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const handleNavClick = (href: string) => {
+    setActiveLink(href);
+    setMenuOpen(false);
+  };
+
+  return (
+    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`} role="navigation" aria-label="Main navigation">
+      <div className={`container ${styles.inner}`}>
+        {/* Logo */}
+        <Link href="/" className={styles.logo} aria-label="Webify – Home">
+          <span className={styles.logoIcon} aria-hidden="true">W</span>
+          <span className={styles.logoText}>
+            web<span className={styles.logoAccent}>ify</span>
+          </span>
+        </Link>
+
+        {/* Desktop Links */}
+        <ul className={styles.links} role="list">
+          {NAV_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <a
+                href={href}
+                className={`${styles.link} ${activeLink === href ? styles.active : ''}`}
+                onClick={() => handleNavClick(href)}
+              >
+                {label}
+                <span className={styles.linkUnderline} />
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA */}
+        <div className={styles.actions}>
+          <a href="#contact" className="btn btn-primary" id="nav-hire-btn">
+            Hire Me
+          </a>
+
+          {/* Mobile hamburger */}
+          <button
+            className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            id="nav-menu-btn"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileOpen : ''}`} aria-hidden={!menuOpen}>
+        <ul>
+          {NAV_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <a href={href} className={styles.mobileLink} onClick={() => handleNavClick(href)}>
+                {label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="#contact" className={`btn btn-primary ${styles.mobileCta}`} onClick={() => setMenuOpen(false)}>
+              Hire Me
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+}

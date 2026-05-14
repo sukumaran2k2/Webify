@@ -1,0 +1,149 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import styles from './Hero.module.css';
+
+const TYPED_WORDS = [
+  'FullStack Developer',
+  'React & Next.js Dev',
+  'UI Craftsman',
+  'Freelance Engineer',
+];
+
+export default function Hero() {
+  const [wordIndex,   setWordIndex]   = useState(0);
+  const [displayed,  setDisplayed]   = useState('');
+  const [isDeleting, setIsDeleting]  = useState(false);
+  const [isPaused,   setIsPaused]    = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+  useEffect(() => {
+    const current = TYPED_WORDS[wordIndex];
+    if (isPaused) {
+      timeoutRef.current = setTimeout(() => { setIsPaused(false); setIsDeleting(true); }, 1800);
+      return;
+    }
+    if (!isDeleting) {
+      if (displayed.length < current.length) {
+        timeoutRef.current = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 60);
+      } else {
+        setIsPaused(true);
+      }
+    } else {
+      if (displayed.length > 0) {
+        timeoutRef.current = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 35);
+      } else {
+        setIsDeleting(false);
+        setWordIndex((i) => (i + 1) % TYPED_WORDS.length);
+      }
+    }
+    return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); };
+  }, [displayed, isDeleting, isPaused, wordIndex]);
+
+  return (
+    <section className={styles.hero} id="hero" aria-label="Hero section">
+      <div className={styles.bgMesh} aria-hidden="true">
+        <div className={`${styles.blob} ${styles.blob1}`} />
+        <div className={`${styles.blob} ${styles.blob2}`} />
+        <div className={`${styles.blob} ${styles.blob3}`} />
+      </div>
+      <div className={styles.grid} aria-hidden="true" />
+
+      <div className={`container ${styles.content}`}>
+        {/* Left – Text */}
+        <div className={styles.textSide}>
+          <div className="section-tag">
+            <span className={styles.statusDot} aria-hidden="true" />
+            Open to Opportunities
+          </div>
+
+          <h1 className={`font-display ${styles.heading}`}>
+            Hi, I&apos;m{' '}
+            <span className={styles.highlight}>Sukumaran</span>
+            <br />
+            I Build{' '}
+            <span className="text-gradient">Interfaces</span>{' '}
+            That Wow
+          </h1>
+
+          <div className={styles.typeRow} aria-live="polite" aria-label={`Role: ${displayed}`}>
+            <span className={styles.typePrefix}>I am a</span>
+            <span className={styles.typedText}>{displayed}</span>
+            <span className={styles.cursor} aria-hidden="true">|</span>
+          </div>
+
+          <p className={styles.subtext}>
+            Fullstack developer specializing in <strong>React</strong>, <strong>Next.js</strong>,
+            <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>TypeScript</strong>. I turn ideas into pixel-perfect, performant web
+            applications — backed by real internship experience and a passion for clean code.
+          </p>
+
+          <div className={styles.ctaGroup}>
+            <a href="#projects" className="btn btn-primary btn-lg" id="hero-view-work-btn">
+              View My Projects
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a href="#contact" className="btn btn-outline btn-lg" id="hero-contact-btn">
+              Hire Me
+            </a>
+          </div>
+
+          <div className={styles.stats}>
+            {[
+              { value: '4+',  label: 'Projects Built' },
+              { value: '1',   label: 'Internship' },
+              { value: 'MBA', label: 'Postgraduate' },
+            ].map(({ value, label }) => (
+              <div key={label} className={styles.stat}>
+                <span className={styles.statVal}>{value}</span>
+                <span className={styles.statLabel}>{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right – Visual */}
+        <div className={styles.visualSide} aria-hidden="true">
+          <div className={styles.avatarWrapper}>
+            <div className={styles.avatarRing} />
+            <div className={styles.avatarRing2} />
+            <div className={styles.avatar}>
+              <div className={styles.avatarInner}>
+                <svg viewBox="0 0 120 120" fill="none" className={styles.avatarSvg}>
+                  <circle cx="60" cy="45" r="22" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.4)" strokeWidth="1.5"/>
+                  <circle cx="60" cy="43" r="16" fill="rgba(245,158,11,0.3)"/>
+                  <ellipse cx="60" cy="95" rx="34" ry="20" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" strokeWidth="1.5"/>
+                </svg>
+                <div className={styles.codeSnippet}>
+                  <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>dev</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"sukumaran"'}</span>;</div>
+                  <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>stack</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"React+TS"'}</span>;</div>
+                  <div className={styles.codeLine}><span style={{color:'#7c3aed'}}>export</span> <span style={{color:'#2563eb'}}>default</span> HireMe;</div>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.badge} ${styles.badge1}`}>
+              <span>⚡</span> Next.js
+            </div>
+            <div className={`${styles.badge} ${styles.badge2}`}>
+              <span>🎨</span> TypeScript
+            </div>
+            <div className={`${styles.badge} ${styles.badge3}`}>
+              <span>🚀</span> React.js
+            </div>
+            <div className={`${styles.badge} ${styles.badge4}`}>
+              <span>🔥</span> Redux
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" className={styles.scrollIndicator} aria-label="Scroll to About section">
+        <div className={styles.scrollMouse}>
+          <div className={styles.scrollWheel} />
+        </div>
+        <span>Scroll</span>
+      </a>
+    </section>
+  );
+}

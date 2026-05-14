@@ -1,0 +1,231 @@
+.about {
+  background: var(--color-bg-2);
+  overflow: hidden;
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ── Staggered Animate ── */
+.animItem {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.about.visible .animItem {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animItem1 { transition-delay: 0.1s; }
+.animItem2 { transition-delay: 0.2s; }
+.animItem3 { transition-delay: 0.3s; }
+.animItem4 { transition-delay: 0.4s; }
+
+.fadeUp {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Left Side ── */
+.leftSide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experienceCard {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow:
+    0 0 0 1px rgba(245,158,11,0.08),
+    0 20px 60px rgba(0,0,0,0.08),
+    0 0 80px rgba(245,158,11,0.06);
+  width: 100%;
+  max-width: 340px;
+}
+
+.expBig {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #D97706, #F59E0B, #FCD34D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.expLabel {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.expCompany {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.expCompany strong {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.expCompany span {
+  font-size: 0.85rem;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.expDate {
+  font-size: 0.75rem !important;
+  color: var(--color-text-faint) !important;
+  font-weight: 500 !important;
+}
+
+.expDivider {
+  height: 1px;
+  background: rgba(245,158,11,0.2);
+  margin: 1.5rem 0;
+}
+
+.expTechStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.techPill {
+  padding: 0.3rem 0.75rem;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.02em;
+}
+
+.glowCircle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Right Side ── */
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bio {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.bio strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* ── Highlights ── */
+.highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.highlightItem {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+  padding: 1rem 1.125rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-mid);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.highlightItem:hover {
+  border-color: rgba(245,158,11,0.4);
+  background: rgba(245,158,11,0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245,158,11,0.12);
+}
+
+.highlightIcon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.highlightTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.highlightDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ── CTA ── */
+.ctaRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) { .grid { gap: 3rem; } }
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .leftSide { order: -1; }
+  .experienceCard { max-width: 100%; }
+  .highlights { grid-template-columns: 1fr; }
+}
