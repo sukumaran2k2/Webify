@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import AnimatedGraphic from './AnimatedGraphic';
 import styles from './Hero.module.css';
 
 const TYPED_WORDS = [
@@ -106,11 +107,9 @@ export default function Hero() {
             <div className={styles.avatarRing2} />
             <div className={styles.avatar}>
               <div className={styles.avatarInner}>
-                <svg viewBox="0 0 120 120" fill="none" className={styles.avatarSvg}>
-                  <circle cx="60" cy="45" r="22" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.4)" strokeWidth="1.5"/>
-                  <circle cx="60" cy="43" r="16" fill="rgba(245,158,11,0.3)"/>
-                  <ellipse cx="60" cy="95" rx="34" ry="20" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" strokeWidth="1.5"/>
-                </svg>
+                <div className={styles.avatarSvgWrapper}>
+                  <AnimatedGraphic />
+                </div>
                 <div className={styles.codeSnippet}>
                   <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>agency</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"Vibecods"'}</span>;</div>
                   <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>workflow</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"AI+Vibe"'}</span>;</div>

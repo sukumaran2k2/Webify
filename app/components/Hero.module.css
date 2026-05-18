@@ -289,9 +289,22 @@
   width: 100%;
 }
 
-.avatarSvg {
-  width: 80px;
-  height: 80px;
+.avatarSvgWrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modernGraphic {
+  object-fit: contain;
+  filter: drop-shadow(0 4px 15px rgba(245,158,11,0.3));
+  transition: transform 0.5s ease;
+}
+
+.avatar:hover .modernGraphic {
+  transform: scale(1.1) translateY(-5px);
 }
 
 .codeSnippet {
