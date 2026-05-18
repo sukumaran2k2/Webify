@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
+import Image from 'next/image';
 
 const NAV_LINKS = [
   { href: '#about',        label: 'About' },
@@ -40,11 +41,9 @@ export default function Navbar() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`} role="navigation" aria-label="Main navigation">
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
-        <Link href="/" className={styles.logo} aria-label="Webify – Home">
-          <span className={styles.logoIcon} aria-hidden="true">W</span>
-          <span className={styles.logoText}>
-            web<span className={styles.logoAccent}>ify</span>
-          </span>
+        <Link href="/" className={styles.logo} aria-label="vibecods – Home">
+          <Image src="/VibecodsLogo.svg" alt="Vibecods Logo" width={140} height={36} className={styles.logoImage} priority />
+          
         </Link>
 
         {/* Desktop Links */}

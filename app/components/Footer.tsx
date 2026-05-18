@@ -1,5 +1,6 @@
 import styles from './Footer.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const LINKS = {
   'Navigate': [
@@ -40,7 +41,7 @@ export default function Footer() {
                 Ready to launch your{' '}
                 <span style={{textDecoration:'underline', textDecorationColor:'rgba(255,255,255,0.5)', textUnderlineOffset:'4px'}}>next project?</span>
               </h2>
-              <p className={styles.ctaText}>Let's turn your idea into a world-class product.</p>
+              <p className={styles.ctaText}>Let&apos;s turn your idea into a world-class product.</p>
             </div>
             <a href="#contact" className={styles.ctaBtn} id="footer-cta-btn">
               Start a Project
@@ -55,10 +56,9 @@ export default function Footer() {
           <div className={styles.grid}>
             {/* Brand */}
             <div className={styles.brand}>
-              <div className={styles.logo}>
-                <div className={styles.logoIcon} aria-hidden="true">W</div>
-                <span className={styles.logoText}>web<span className={styles.logoAccent}>ify</span></span>
-              </div>
+              <Link href="/" className={styles.logo} aria-label="vibecods – Home">
+                <Image src="/VibecodsLogo.svg" alt="Vibecods Logo" width={140} height={36} className={styles.logoImage} />
+              </Link>
               <p className={styles.tagline}>
                 Building exceptional digital experiences for forward-thinking businesses.
               </p>
@@ -98,7 +98,7 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className={styles.bottom}>
             <p className={styles.copyright}>
-              © {year} <strong>Webify</strong>. All rights reserved.
+              © {year} <strong>vibecods</strong>. All rights reserved.
             </p>
             <div className={styles.bottomLinks}>
               <a href="#" className={styles.link} id="footer-privacy">Privacy Policy</a>

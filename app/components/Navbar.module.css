@@ -33,32 +33,11 @@
   flex-shrink: 0;
 }
 
-.logoIcon {
-  width: 36px;
+.logoImage {
   height: 36px;
-  background: linear-gradient(135deg, #F59E0B, #D97706);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.1rem;
-  color: #fff;
-  flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(245,158,11,0.4);
-}
-
-.logoText {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.35rem;
-  color: var(--color-text);
-  letter-spacing: -0.03em;
-}
-
-.logoAccent {
-  color: var(--color-primary);
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* ── Desktop Links ── */

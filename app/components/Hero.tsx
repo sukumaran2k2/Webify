@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Hero.module.css';
 
 const TYPED_WORDS = [
-  'FullStack Developer',
-  'React & Next.js Dev',
-  'UI Craftsman',
-  'Freelance Engineer',
+  'FullStack Developers',
+  'React & Next.js Experts',
+  'UI Craftsmen',
+  'A Dedicated Team',
 ];
 
 export default function Hero() {
@@ -58,24 +58,23 @@ export default function Hero() {
           </div>
 
           <h1 className={`font-display ${styles.heading}`}>
-            Hi, I&apos;m{' '}
-            <span className={styles.highlight}>Sukumaran</span>
+            We Are <span className={styles.highlight}>vibecods</span>
             <br />
-            I Build{' '}
-            <span className="text-gradient">Interfaces</span>{' '}
+            Crafting <span className="text-gradient">Interfaces</span>
+            <br />
             That Wow
           </h1>
 
           <div className={styles.typeRow} aria-live="polite" aria-label={`Role: ${displayed}`}>
-            <span className={styles.typePrefix}>I am a</span>
+            <span className={styles.typePrefix}>We are</span>
             <span className={styles.typedText}>{displayed}</span>
             <span className={styles.cursor} aria-hidden="true">|</span>
           </div>
 
           <p className={styles.subtext}>
-            Fullstack developer specializing in <strong>React</strong>, <strong>Next.js</strong>,
-            <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>TypeScript</strong>. I turn ideas into pixel-perfect, performant web
-            applications — backed by real internship experience and a passion for clean code.
+            Fullstack developers specializing in <strong>React</strong>, <strong>Next.js</strong>,
+            <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>TypeScript</strong>. We turn ideas into pixel-perfect, performant web
+            applications — backed by real experience and a passion for clean code.
           </p>
 
           <div className={styles.ctaGroup}>
@@ -115,7 +114,7 @@ export default function Hero() {
                   <ellipse cx="60" cy="95" rx="34" ry="20" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" strokeWidth="1.5"/>
                 </svg>
                 <div className={styles.codeSnippet}>
-                  <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>dev</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"sukumaran"'}</span>;</div>
+                  <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>team</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"vibecods"'}</span>;</div>
                   <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>stack</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"React+TS"'}</span>;</div>
                   <div className={styles.codeLine}><span style={{color:'#7c3aed'}}>export</span> <span style={{color:'#2563eb'}}>default</span> HireMe;</div>
                 </div>
