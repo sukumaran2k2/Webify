@@ -97,6 +97,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -145,7 +146,7 @@ input, textarea, select { font-family: inherit; }
   padding: 0 var(--spacing-lg);
 }
 
-.section { padding: var(--spacing-3xl) 0; position: relative; }
+.section { padding: var(--spacing-2xl) 0; position: relative; }
 .section-sm { padding: var(--spacing-2xl) 0; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }

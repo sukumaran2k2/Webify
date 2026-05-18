@@ -5,24 +5,24 @@ import styles from "./About.module.css";
 
 const HIGHLIGHTS = [
   {
-    emoji: "🎯",
-    title: "Detail-Oriented",
-    desc: "Pixel-perfect UIs with clean, maintainable code and a strong eye for design.",
+    emoji: "🤖",
+    title: "AI-Powered Workflow",
+    desc: "Leveraging cutting-edge AI tools to write code faster, smarter, and with fewer bugs.",
   },
   {
     emoji: "⚡",
-    title: "Fast Learner",
-    desc: "Adapted Agile workflows and real-world team practices during my internship.",
+    title: "Vibe Coding",
+    desc: "We don't post just build software; we orchestrate AI to craft digital experiences that feel right.",
   },
   {
-    emoji: "🔒",
-    title: "Clean Code",
-    desc: "TypeScript-first development with reusable component patterns and best practices.",
+    emoji: "✨",
+    title: "Modern Stack",
+    desc: "Next.js, React, and TypeScript for blazing fast, SEO-optimized, and scalable web apps.",
   },
   {
-    emoji: "🌐",
-    title: "Frontend Focus",
-    desc: "React, Next.js, Redux, and REST APIs — building the full client-side experience.",
+    emoji: "🚀",
+    title: "Rapid Delivery",
+    desc: "Transforming your ideas into production-ready products at unprecedented speeds.",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function About() {
       className={`section ${styles.about}`}
       id="about"
       ref={sectionRef}
-      aria-label="About me"
+      aria-label="About us"
     >
       <div className="container">
         <div className={styles.grid}>
@@ -58,22 +58,22 @@ export default function About() {
               className={`${styles.experienceCard} ${styles.animItem} ${styles.animItem1}`}
             >
               <div className={styles.expBig}>✦</div>
-              <div className={styles.expLabel}>Internship Experience</div>
+              <div className={styles.expLabel}>The Vibecods Edge</div>
               <div className={styles.expDivider} />
               <div className={styles.expCompany}>
-                <strong>Web Developer Intern</strong>
-                <span>Floretta India</span>
-                <span className={styles.expDate}>Oct 2025 – Jan 2026</span>
+                <strong>Next-Gen Development</strong>
+                <span>Powered by AI</span>
+                <span className={styles.expDate}>Future-Proof</span>
               </div>
               <div className={styles.expDivider} />
               <div className={styles.expTechStack}>
                 {[
-                  "React.js",
+                  "AI Automation",
                   "Next.js",
                   "TypeScript",
-                  "Redux",
-                  "Tailwind",
-                  "Git",
+                  "Vibe Coding",
+                  "Modern UI",
+                  "Scale",
                 ].map((t) => (
                   <span key={t} className={styles.techPill}>
                     {t}
@@ -89,26 +89,17 @@ export default function About() {
             <div
               className={`${styles.fadeUp} ${styles.animItem} ${styles.animItem2}`}
             >
-              <div className="section-tag">👋 About Me</div>
+              <div className="section-tag">👋 Who We Are</div>
               <h2 className="section-title font-display">
-                Turning Code Into
+                Welcome to the Future of
                 <br />
-                <span className="text-gradient">Real Products</span>
+                <span className="text-gradient">Vibe Coding</span>
               </h2>
               <p className={styles.bio}>
-                Hey! I'm <strong>Sukumaran</strong>, a passionate fullStack
-                developer with a <strong>B.Sc in Computer Science</strong> and
-                an <strong>MBA</strong>. I specialise in building modern web
-                applications using <strong>React</strong>,{" "}
-                <strong>Next.js</strong>, <strong>TypeScript</strong> ,
-                <strong>Node.js</strong>, <strong>Express.js</strong> and{" "}
-                <strong>MongoDB</strong>.
+                At <strong>Vibecods</strong>, we aren&apos;t your typical developers. We are a modern collective focused on <strong>vibe coding</strong>—a philosophy where we blend human creativity with the immense power of <strong>modern AI tools</strong>.
               </p>
               <p className={styles.bio}>
-                During my internship at <strong>Floretta India</strong>, I built
-                pixel-perfect UIs, contributed to modular component libraries,
-                and worked within an Agile team — giving me real-world
-                experience beyond tutorials and courses.
+                We ditch the outdated, slow paradigms of traditional development. By leveraging advanced AI assistants, intelligent code generation, and a modern tech stack, we build stunning web applications faster, smarter, and with a distinct vibe that stands out from the crowd.
               </p>
             </div>
 
@@ -134,30 +125,14 @@ export default function About() {
                 className="btn btn-primary"
                 id="about-hire-btn"
               >
-                Hire Me Now
+                Start a Project
               </a>
               <a
-                href="/Sukumaran-Resume.pdf"
+                href="#projects"
                 className="btn btn-outline"
-                id="about-resume-btn"
-                download="Sukumaran-Resume.pdf"
+                id="about-projects-btn"
               >
-                Download CV
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
+                View Our Work
               </a>
             </div>
           </div>

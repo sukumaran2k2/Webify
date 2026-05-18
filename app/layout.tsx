@@ -3,37 +3,39 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sukumaran S – Frontend Developer | React & Next.js',
-    template: '%s | Sukumaran S',
+    default: 'Vibecods | Premier Vibe Coding & AI Web Development Agency',
+    template: '%s | Vibecods AI Web Agency',
   },
   description:
-    'Sukumaran S is a frontend developer specialising in React, Next.js, and TypeScript. Internship experience at Floretta India. Available for freelance projects.',
+    'Vibecods is a top-tier web development agency specializing in Vibe Coding and AI-driven development. We build lightning-fast, modern, and scalable Next.js and React applications.',
   keywords: [
-    'Sukumaran',
-    'frontend developer',
-    'React developer',
-    'Next.js developer',
-    'TypeScript developer',
-    'freelance developer',
-    'hire frontend developer',
-    'Webify',
-    'Redux developer',
+    'Vibe Coding',
+    'Vibe Coding Agency',
+    'AI Web Development',
+    'AI Coding Agency',
+    'Next.js Agency',
+    'React Development Agency',
+    'Modern Web Development',
+    'Hire Vibe Coders',
+    'AI-powered Developers',
+    'Top Web Development Agency',
+    'Vibecods',
   ],
-  authors: [{ name: 'Sukumaran S' }],
-  creator: 'Sukumaran S',
+  authors: [{ name: 'Vibecods Team' }],
+  creator: 'Vibecods',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Webify – Sukumaran S',
-    title: 'Sukumaran S – Frontend Developer | React & Next.js',
+    siteName: 'Vibecods AI Web Development',
+    title: 'Vibecods | Premier Vibe Coding & AI Web Development Agency',
     description:
-      'Frontend developer specialising in React, Next.js, TypeScript and Redux. Internship at Floretta India. Available to hire.',
+      'The leading agency for Vibe Coding and AI-driven web development. We deliver robust Next.js and React products faster than ever before.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sukumaran S – Frontend Developer',
+    title: 'Vibecods | AI-Powered Vibe Coding Agency',
     description:
-      'React & Next.js frontend developer. Internship experience. Available for freelance work.',
+      'We combine human intuition with advanced AI models to build modern, lightning-fast web applications.',
   },
   robots: {
     index: true,
@@ -45,9 +47,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  icons: {
-    icon: '/favicon.ico',
   },
 };
 

@@ -23,18 +23,44 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('sending');
-    // Simulate async send
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus('sent');
-    formRef.current?.reset();
-    setForm({ name: '', email: '', service: '', budget: '', message: '' });
+
+    setStatus("sending");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed");
+      }
+
+      setStatus("sent");
+
+      formRef.current?.reset();
+
+      setForm({
+        name: "",
+        email: "",
+        service: "",
+        budget: "",
+        message: "",
+      });
+
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   const CONTACT_ITEMS = [
-    { icon: '📧', label: 'Email',    value: 'hello@webify.dev',    href: 'mailto:hello@webify.dev' },
-    { icon: '💬', label: 'Telegram', value: '@webifydev',          href: 'https://t.me/webifydev' },
-    { icon: '🌐', label: 'LinkedIn', value: 'linkedin.com/in/webify', href: '#' },
+    { icon: '📧', label: 'Email',    value: 'vibecods@vibecods.com',    href: 'mailto:vibecods@vibecods.com' },
+    { icon: '💬', label: 'Telegram', value: '@vibecods',          href: 'https://t.me/webifydev' },
+    { icon: '🌐', label: 'LinkedIn', value: 'linkedin.com/in/vibecods', href: '#' },
   ];
 
   return (

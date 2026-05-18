@@ -78,12 +78,22 @@
 .card:hover .preview { transform: scale(1.02); }
 
 .previewEmoji {
-  font-size: 4rem;
-  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.15));
-  transition: transform 0.3s ease;
+  font-size: 3rem;
+  transition: transform var(--transition-mid);
 }
 
-.card:hover .previewEmoji { transform: scale(1.15) rotate(-5deg); }
+.projectImg {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .projectImg {
+  transform: scale(1.05);
+}
+
+.card:hover .previewEmoji {
+  transform: scale(1.1) rotate(5deg);
+}
 
 .featuredBadge {
   position: absolute;

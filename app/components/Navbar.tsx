@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: '#services',     label: 'Services' },
   { href: '#skills',       label: 'Skills' },
   { href: '#projects',     label: 'Projects' },
+  { href: '#blog',         label: 'Blog' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact',      label: 'Contact' },
 ];
@@ -42,7 +43,7 @@ export default function Navbar() {
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
         <Link href="/" className={styles.logo} aria-label="vibecods – Home">
-          <Image src="/VibecodsLogo.svg" alt="Vibecods Logo" width={140} height={36} className={styles.logoImage} priority />
+          <Image src="/VibecodsLogo.svg" alt="Vibecods Logo" width={180} height={46} className={styles.logoImage} priority />
           
         </Link>
 
@@ -65,7 +66,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className={styles.actions}>
           <a href="#contact" className="btn btn-primary" id="nav-hire-btn">
-            Hire Me
+            Hire Us
           </a>
 
           {/* Mobile hamburger */}
@@ -93,7 +94,7 @@ export default function Navbar() {
           ))}
           <li>
             <a href="#contact" className={`btn btn-primary ${styles.mobileCta}`} onClick={() => setMenuOpen(false)}>
-              Hire Me
+              Hire Us
             </a>
           </li>
         </ul>

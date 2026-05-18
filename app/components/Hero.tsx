@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Hero.module.css';
 
 const TYPED_WORDS = [
-  'FullStack Developers',
-  'React & Next.js Experts',
-  'UI Craftsmen',
-  'A Dedicated Team',
+  'Vibe Coders',
+  'AI-Powered Developers',
+  'Digital Craftsmen',
+  'Next-Gen Engineers',
 ];
 
 export default function Hero() {
@@ -52,13 +52,9 @@ export default function Hero() {
       <div className={`container ${styles.content}`}>
         {/* Left – Text */}
         <div className={styles.textSide}>
-          <div className="section-tag">
-            <span className={styles.statusDot} aria-hidden="true" />
-            Open to Opportunities
-          </div>
 
           <h1 className={`font-display ${styles.heading}`}>
-            We Are <span className={styles.highlight}>vibecods</span>
+            We Are <span className={styles.highlight}>Vibe<span  className={`font-display ${styles.heading}`}>cods</span></span>
             <br />
             Crafting <span className="text-gradient">Interfaces</span>
             <br />
@@ -72,26 +68,24 @@ export default function Hero() {
           </div>
 
           <p className={styles.subtext}>
-            Fullstack developers specializing in <strong>React</strong>, <strong>Next.js</strong>,
-            <strong>Node.js</strong>, <strong>MongoDB</strong>, <strong>TypeScript</strong>. We turn ideas into pixel-perfect, performant web
-            applications — backed by real experience and a passion for clean code.
+            We are a collective of next-gen developers specializing in <strong>AI-assisted Vibe Coding</strong>, <strong>React</strong>, and <strong>Next.js</strong>. We blend human creativity with artificial intelligence to turn ideas into pixel-perfect, performant web applications at unprecedented speeds.
           </p>
 
           <div className={styles.ctaGroup}>
             <a href="#projects" className="btn btn-primary btn-lg" id="hero-view-work-btn">
-              View My Projects
+              View Our Work
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
             </a>
             <a href="#contact" className="btn btn-outline btn-lg" id="hero-contact-btn">
-              Hire Me
+              Hire Us
             </a>
           </div>
 
           <div className={styles.stats}>
             {[
-              { value: '4+',  label: 'Projects Built' },
-              { value: '1',   label: 'Internship' },
-              { value: 'MBA', label: 'Postgraduate' },
+              { value: '10x', label: 'Faster Delivery' },
+              { value: '100%', label: 'Vibe Match' },
+              { value: 'AI', label: 'Powered Workflow' },
             ].map(({ value, label }) => (
               <div key={label} className={styles.stat}>
                 <span className={styles.statVal}>{value}</span>
@@ -102,8 +96,12 @@ export default function Hero() {
         </div>
 
         {/* Right – Visual */}
-        <div className={styles.visualSide} aria-hidden="true">
-          <div className={styles.avatarWrapper}>
+        <div className={styles.visualSide}>
+          <div className={`section-tag ${styles.heroSectionTag}`}>
+            <span className={styles.statusDot} aria-hidden="true" />
+            Open to Opportunities
+          </div>
+          <div className={styles.avatarWrapper} aria-hidden="true">
             <div className={styles.avatarRing} />
             <div className={styles.avatarRing2} />
             <div className={styles.avatar}>
@@ -114,35 +112,35 @@ export default function Hero() {
                   <ellipse cx="60" cy="95" rx="34" ry="20" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" strokeWidth="1.5"/>
                 </svg>
                 <div className={styles.codeSnippet}>
-                  <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>team</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"vibecods"'}</span>;</div>
-                  <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>stack</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"React+TS"'}</span>;</div>
-                  <div className={styles.codeLine}><span style={{color:'#7c3aed'}}>export</span> <span style={{color:'#2563eb'}}>default</span> HireMe;</div>
+                  <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>agency</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"Vibecods"'}</span>;</div>
+                  <div className={styles.codeLine}><span style={{color:'#d97706'}}>const</span> <span style={{color:'#b45309'}}>workflow</span> <span style={{color:'#9a3412'}}>=</span> <span style={{color:'#16a34a'}}>{'"AI+Vibe"'}</span>;</div>
+                  <div className={styles.codeLine}><span style={{color:'#7c3aed'}}>export</span> <span style={{color:'#2563eb'}}>default</span> <span style={{color:'#10b981'}}>BuildFast</span>;</div>
                 </div>
               </div>
             </div>
 
             <div className={`${styles.badge} ${styles.badge1}`}>
-              <span>⚡</span> Next.js
+              <span>🤖</span> AI Agents
             </div>
             <div className={`${styles.badge} ${styles.badge2}`}>
-              <span>🎨</span> TypeScript
+              <span>⚡</span> Vibe Coding
             </div>
             <div className={`${styles.badge} ${styles.badge3}`}>
-              <span>🚀</span> React.js
+              <span>🚀</span> Next.js
             </div>
             <div className={`${styles.badge} ${styles.badge4}`}>
-              <span>🔥</span> Redux
+              <span>🎨</span> Tailwind
             </div>
           </div>
         </div>
       </div>
 
-      <a href="#about" className={styles.scrollIndicator} aria-label="Scroll to About section">
+      {/* <a href="#about" className={styles.scrollIndicator} aria-label="Scroll to About section">
         <div className={styles.scrollMouse}>
           <div className={styles.scrollWheel} />
         </div>
         <span>Scroll</span>
-      </a>
+      </a> */}
     </section>
   );
 }

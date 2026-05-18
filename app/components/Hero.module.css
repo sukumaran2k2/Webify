@@ -210,9 +210,15 @@
 /* ── Visual Side ── */
 .visualSide {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
   animation: slide-up 0.8s ease 0.2s both;
+}
+
+.heroSectionTag {
+  margin-top: -170px;
 }
 
 .avatarWrapper {
