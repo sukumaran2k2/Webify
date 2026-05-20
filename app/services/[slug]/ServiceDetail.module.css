@@ -1,6 +1,8 @@
 .hero {
   padding: 90px 0 4.5rem;
-  background: radial-gradient(circle at top, rgba(245,158,11,0.12), transparent 35%), #fff;
+  background:
+    radial-gradient(circle at top, rgba(245, 158, 11, 0.12), transparent 35%),
+    #fff;
 }
 
 .backLink {
@@ -54,7 +56,7 @@
 }
 
 .feature {
-  background: rgba(245,158,11,0.1);
+  background: rgba(245, 158, 11, 0.1);
   color: var(--color-text);
   padding: 0.65rem 0.95rem;
   border-radius: 999px;
@@ -78,10 +80,10 @@
 .content {
   max-width: 760px;
   background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.07);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 1.25rem;
   padding: 2rem;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
 }
 
 .content h2 {

@@ -8,7 +8,7 @@
 .card {
   position: relative;
   background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 1.25rem;
   padding: 1.75rem;
   overflow: hidden;
@@ -25,7 +25,7 @@
     transform 0.6s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .card.visible {
@@ -34,8 +34,10 @@
 }
 
 .card:hover {
-  border-color: rgba(245,158,11,0.4);
-  box-shadow: 0 8px 40px rgba(245,158,11,0.15), 0 2px 12px rgba(0,0,0,0.08);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow:
+    0 8px 40px rgba(245, 158, 11, 0.15),
+    0 2px 12px rgba(0, 0, 0, 0.08);
   transform: translateY(-5px) scale(1);
 }
 
@@ -48,7 +50,9 @@
   pointer-events: none;
 }
 
-.card:hover .cardBg { opacity: 1; }
+.card:hover .cardBg {
+  opacity: 1;
+}
 
 /* ── Icon ── */
 .iconWrap {
@@ -121,7 +125,7 @@
   position: relative;
   z-index: 1;
   padding-top: 0.5rem;
-  border-top: 1px solid rgba(0,0,0,0.07);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
   margin-top: auto;
 }
 
@@ -135,8 +139,18 @@
   letter-spacing: 0.01em;
 }
 
-.learnMore:hover { letter-spacing: 0.05em; }
+.learnMore:hover {
+  letter-spacing: 0.05em;
+}
 
 /* ── Responsive ── */
-@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px)  { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
