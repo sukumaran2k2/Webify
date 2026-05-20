@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import Navbar from '@/app/components/Navbar';
 import { BLOG_POSTS } from '@/lib/data';
 import styles from './BlogDetail.module.css';
 
@@ -18,6 +19,7 @@ export default async function BlogPage(props: BlogPageProps) {
 
   return (
     <main>
+      <Navbar />
       <section className={styles.hero}>
         <div className="container">
           <Link href="/#blog" className={styles.backLink}>

@@ -1,6 +1,10 @@
 .hero {
-  padding: 120px 0 60px;
-  background: radial-gradient(circle at 50% -20%, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+  padding: 90px 0 60px;
+  background: radial-gradient(
+    circle at 50% -20%,
+    rgba(245, 158, 11, 0.15) 0%,
+    transparent 70%
+  );
 }
 
 .backLink {
@@ -9,9 +13,10 @@
   gap: 0.5rem;
   color: var(--text-muted);
   text-decoration: none;
-  margin-bottom: 2rem;
+  
   transition: color 0.2s;
   font-weight: 500;
+  margin-top: 1rem;
 }
 
 .backLink:hover {
@@ -21,21 +26,22 @@
 .header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 4rem;
+  margin: -1.5rem auto 4rem;
 }
 
 .title {
   font-size: 3.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .meta {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  
   color: var(--text-muted);
-  margin-bottom: 2rem;
+  
+  
 }
 
 .category {
@@ -51,7 +57,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
 }
 
 .techTag {
@@ -72,7 +78,7 @@
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .image {

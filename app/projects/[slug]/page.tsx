@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import Navbar from '@/app/components/Navbar';
 import { PROJECTS } from '@/lib/data';
 import styles from './ProjectDetail.module.css';
 
@@ -18,6 +19,7 @@ export default async function ProjectPage(props: ProjectPageProps) {
 
   return (
     <main>
+      <Navbar />
       <section className={styles.hero}>
         <div className="container">
           <Link href="/#projects" className={styles.backLink}>

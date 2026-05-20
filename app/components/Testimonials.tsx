@@ -11,7 +11,7 @@ const TESTIMONIALS = [
     avatar: 'SM',
     color: '#6366f1',
     rating: 5,
-    text: 'Working with Webify was a game-changer. They delivered our SaaS platform ahead of schedule with exceptional quality. The code is clean, scalable, and the UI is absolutely stunning.',
+    text: 'Working with Vibecods was a game-changer. They delivered our SaaS platform ahead of schedule with exceptional quality. The code is clean, scalable, and the UI is absolutely stunning.',
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const TESTIMONIALS = [
     avatar: 'JH',
     color: '#22c55e',
     rating: 5,
-    text: 'Our e-commerce conversion rate jumped 40% after the redesign. Webify understood our brand perfectly and built exactly what we envisioned — and more. Highly recommend!',
+    text: 'Our e-commerce conversion rate jumped 40% after the redesign. Vibecods understood our brand perfectly and built exactly what we envisioned — and more. Highly recommend!',
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const TESTIMONIALS = [
     avatar: 'AT',
     color: '#f59e0b',
     rating: 5,
-    text: 'The landing page Webify built increased our lead capture by 60%. Blazing fast performance, beautiful animations, and on-point SEO. A true professional!',
+    text: 'The landing page Vibecods built increased our lead capture by 60%. Blazing fast performance, beautiful animations, and on-point SEO. A true professional!',
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const TESTIMONIALS = [
     avatar: 'LC',
     color: '#ec4899',
     rating: 5,
-    text: 'Webify turned our complex requirements into an elegant, intuitive dashboard. The attention to detail is remarkable. We\'ll definitely be working together again.',
+    text: 'Vibecods turned our complex requirements into an elegant, intuitive dashboard. The attention to detail is remarkable. We\'ll definitely be working together again.',
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ const TESTIMONIALS = [
     avatar: 'MG',
     color: '#8b5cf6',
     rating: 5,
-    text: 'As a first-time founder, I needed someone who could handle everything. Webify built my entire MVP in 3 weeks. The product looks and works phenomenally.',
+    text: 'As a first-time founder, I needed someone who could handle everything. Vibecods built my entire MVP in 3 weeks. The product looks and works phenomenally.',
   },
 ];
 
@@ -104,7 +104,7 @@ export default function Testimonials() {
             What Clients <span className="text-gradient">Say</span>
           </h2>
           <p className="section-subtitle">
-            Don't take my word for it — hear from the clients who trusted Webify with their vision.
+            Don't take my word for it — hear from the clients who trusted Vibecods with their vision.
           </p>
         </div>
 

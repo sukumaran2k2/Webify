@@ -34,7 +34,7 @@ export default function Projects() {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="section-subtitle">
-            A selection of work that showcases my range — from sleek marketing sites to complex SaaS products.
+            A selection of work that showcases our range — from sleek marketing sites to complex SaaS products.
           </p>
         </div>
 
@@ -57,12 +57,13 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className={styles.grid}>
           {filtered.map((project, i) => (
-            <article
+            <Link
               key={project.id}
+              href={`/projects/${project.slug}`}
               id={`project-${project.id}`}
               className={`${styles.card} ${project.featured ? styles.featured : ''} ${visible ? styles.visible : ''}`}
               style={{ transitionDelay: `${i * 0.08}s` }}
-              aria-label={project.title}
+              aria-label={`${project.title} - View Details`}
             >
               {/* Preview panel */}
               <div className={styles.preview} style={{ background: project.gradient }}>
@@ -89,13 +90,13 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className={styles.actions}>
-                  <Link href={`/projects/${project.slug}`} className={styles.btnLive} id={`project-${project.id}-details`}>
+                  <span className={styles.btnLive} id={`project-${project.id}-details`}>
                     View Details
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </Link>
+                  </span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

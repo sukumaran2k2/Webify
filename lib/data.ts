@@ -76,6 +76,104 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+export interface Service {
+  id: string;
+  icon: string;
+  title: string;
+  desc: string;
+  content: string;
+  features: string[];
+  gradient: string;
+  color: string;
+}
+
+export const SERVICES: Service[] = [
+  {
+    id: 'web-dev',
+    icon: '💻',
+    title: 'Web Development',
+    desc: 'Full-stack web apps built with Next.js, React, and Node.js. Fast, scalable, and production-ready.',
+    content: `
+      Build modern web applications with performance, reliability, and user experience in mind. Our Web Development service focuses on creating fast, accessible, and maintainable products.
+      
+      We provide end-to-end development including frontend architecture, backend APIs, database design, and deployment automation to ensure your app is ready for launch and growth.
+    `,
+    features: ['Next.js / React', 'REST & GraphQL APIs', 'PostgreSQL / MongoDB', 'CI/CD Pipeline'],
+    gradient: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.08))',
+    color: '#6366f1',
+  },
+  {
+    id: 'ui-ux',
+    icon: '🎨',
+    title: 'UI/UX Design',
+    desc: 'Pixel-perfect interfaces that delight users. From wireframes to interactive prototypes.',
+    content: `
+      Design experiences that are intuitive and beautiful. Our UI/UX service combines research, wireframing, visual design, and interaction patterns to create cohesive products.
+      
+      We prioritize usability, accessibility, and conversion to make sure every interface feels polished and performs across devices.
+    `,
+    features: ['Figma Design', 'Design Systems', 'Responsive Layouts', 'Motion Design'],
+    gradient: 'linear-gradient(135deg, rgba(6,182,212,0.15), rgba(14,165,233,0.08))',
+    color: '#06b6d4',
+  },
+  {
+    id: 'ecommerce',
+    icon: '🛒',
+    title: 'E-Commerce',
+    desc: 'High-converting e-commerce stores with seamless checkout, inventory management, and analytics.',
+    content: `
+      Launch a digital storefront designed for conversion. Our E-Commerce service builds custom shopping experiences that are secure, scalable, and optimized for purchase flow.
+      
+      We integrate payment processing, product management, customer workflows, and analytics to help you sell more with less friction.
+    `,
+    features: ['Shopify / WooCommerce', 'Payment Gateways', 'Cart & Checkout', 'SEO Optimized'],
+    gradient: 'linear-gradient(135deg, rgba(34,197,94,0.15), rgba(16,185,129,0.08))',
+    color: '#22c55e',
+  },
+  {
+    id: 'seo',
+    icon: '🔍',
+    title: 'SEO Optimization',
+    desc: 'Boost your search rankings with technical SEO, Core Web Vitals optimization, and content strategy.',
+    content: `
+      Improve search visibility and organic traffic with technical SEO and performance optimization. Our SEO service targets both speed and structure for better rankings.
+      
+      We focus on metadata, schema markup, page speed, and crawlability so your site appears more prominently in search results.
+    `,
+    features: ['Core Web Vitals', 'Schema Markup', 'Meta Optimization', 'Site Speed'],
+    gradient: 'linear-gradient(135deg, rgba(245,158,11,0.15), rgba(251,146,60,0.08))',
+    color: '#f59e0b',
+  },
+  {
+    id: 'api',
+    icon: '🔌',
+    title: 'API Development',
+    desc: 'Robust REST and GraphQL APIs with authentication, rate limiting, and comprehensive documentation.',
+    content: `
+      Build dependable APIs that power your product. Our API Development service delivers scalable backend services with secure authentication and clean documentation.
+      
+      We support REST, GraphQL, and real-time endpoints so your app can connect to data safely and efficiently.
+    `,
+    features: ['REST & GraphQL', 'JWT Auth', 'Rate Limiting', 'API Docs'],
+    gradient: 'linear-gradient(135deg, rgba(236,72,153,0.15), rgba(244,63,94,0.08))',
+    color: '#ec4899',
+  },
+  {
+    id: 'maintenance',
+    icon: '🛡️',
+    title: 'Maintenance & Support',
+    desc: 'Ongoing care for your product – updates, bug fixes, monitoring, and performance improvements.',
+    content: `
+      Keep your product running smoothly over time with proactive maintenance and support. Our service includes monitoring, bug fixes, security updates, and performance tuning.
+      
+      We help teams stay secure and stable while continuously improving the experience for users.
+    `,
+    features: ['24/7 Monitoring', 'Security Patches', 'Performance Tuning', 'Regular Updates'],
+    gradient: 'linear-gradient(135deg, rgba(139,92,246,0.15), rgba(167,139,250,0.08))',
+    color: '#8b5cf6',
+  },
+];
+
 export interface BlogPost {
   id: number;
   slug: string;
