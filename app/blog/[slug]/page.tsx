@@ -17,10 +17,16 @@ export default async function BlogPage(props: BlogPageProps) {
     notFound();
   }
 
+  const isMarketingBlog = post.variant === "marketing";
+  const heroClassName = isMarketingBlog ? styles.heroAlt : styles.hero;
+  const titleClassName = `${styles.title} font-display ${
+    isMarketingBlog ? styles.titleAlt : ""
+  }`;
+
   return (
     <main>
       <Navbar />
-      <section className={styles.hero}>
+      <section className={heroClassName}>
         <div className="container">
           <Link href="/#blog" className={styles.backLink}>
             <svg
@@ -41,13 +47,16 @@ export default async function BlogPage(props: BlogPageProps) {
           <div className={styles.header}>
             <div className={styles.tags}>
               {post.tags.map((tag) => (
-                <span key={tag} className={styles.tag}>
+                <span
+                  key={tag}
+                  className={`${styles.tag} ${isMarketingBlog ? styles.tagAlt : ""}`}
+                >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <h1 className={`${styles.title} font-display`}>{post.title}</h1>
+            <h1 className={titleClassName}>{post.title}</h1>
 
             <div className={styles.meta}>
               <span>{post.date}</span>
@@ -56,7 +65,11 @@ export default async function BlogPage(props: BlogPageProps) {
             </div>
           </div>
 
-          <div className={styles.imageContainer}>
+          <div
+            className={
+              isMarketingBlog ? styles.heroAltBody : styles.imageContainer
+            }
+          >
             <Image
               src={post.image}
               alt={`${post.title} hero image`}
@@ -66,7 +79,7 @@ export default async function BlogPage(props: BlogPageProps) {
             />
           </div>
 
-          <div className={styles.content}>
+          <div className={isMarketingBlog ? styles.contentAlt : styles.content}>
             <p>{post.content.trim()}</p>
           </div>
         </div>
