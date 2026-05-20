@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
@@ -33,18 +34,33 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const pathname = usePathname();
+
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
     setActiveLink(href);
     setMenuOpen(false);
+
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/') {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setMenuOpen(false);
+    }
   };
 
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`} role="navigation" aria-label="Main navigation">
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
-        <Link href="/" className={styles.logo} aria-label="vibecods – Home">
+        <Link href="/" className={styles.logo} aria-label="vibecods – Home" onClick={handleLogoClick}>
           <Image src="/VibecodsLogo.svg" alt="Vibecods Logo" width={180} height={46} className={styles.logoImage} priority />
-          
         </Link>
 
         {/* Desktop Links */}
@@ -54,7 +70,7 @@ export default function Navbar() {
               <a
                 href={href}
                 className={`${styles.link} ${activeLink === href ? styles.active : ''}`}
-                onClick={() => handleNavClick(href)}
+                onClick={(event) => handleNavClick(event, href)}
               >
                 {label}
                 <span className={styles.linkUnderline} />
@@ -87,7 +103,7 @@ export default function Navbar() {
         <ul>
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
-              <a href={href} className={styles.mobileLink} onClick={() => handleNavClick(href)}>
+              <a href={href} className={styles.mobileLink} onClick={(event) => handleNavClick(event, href)}>
                 {label}
               </a>
             </li>
