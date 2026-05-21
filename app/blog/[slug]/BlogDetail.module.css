@@ -27,6 +27,7 @@
   transition: color 0.2s;
   font-weight: 500;
   margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .backLink:hover {
@@ -43,6 +44,14 @@
   font-size: 3.5rem;
   margin-bottom: 1rem;
   line-height: 1.2;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto 1.75rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 .titleAlt {
@@ -104,6 +113,7 @@
   color: var(--text-secondary);
   padding-bottom: 100px;
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .contentAlt {
@@ -118,6 +128,7 @@
   border-radius: 24px;
   box-shadow: 0 20px 60px rgba(245, 158, 11, 0.1);
   white-space: pre-wrap;
+  text-align: left;
 }
 
 .tags {
@@ -148,4 +159,77 @@
   border-radius: 999px;
   box-shadow: 0 12px 24px rgba(245, 158, 11, 0.1);
   border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .heroAlt {
+    padding: 75px 0 45px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle,
+  .meta,
+  .content,
+  .contentAlt {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .heroAlt {
+    padding: 60px 0 40px;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .meta {
+    font-size: 0.95rem;
+  }
+
+  .content,
+  .contentAlt {
+    font-size: 0.98rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .tag,
+  .tagAlt {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .content,
+  .contentAlt {
+    font-size: 0.95rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }

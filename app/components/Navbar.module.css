@@ -198,17 +198,15 @@
     width: auto;
     justify-content: flex-end;
   }
-}
-
-@media (max-width: 768px) {
   .mobileMenu {
     display: block;
   }
-  .mobileMenu.mobileOpen {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: all;
-  }
+}
+
+.mobileMenu.mobileOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
 }
 
 @media (max-width: 480px) {
